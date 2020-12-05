@@ -1,5 +1,6 @@
 ### Date created
-Bikes data project created on 24 November 2020 at 8:20 PM
+Bikes data project modify on 25 November 2020 
+new function added
 
 ### Project Title
 US Bikeshare Data
