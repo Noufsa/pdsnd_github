@@ -43,7 +43,7 @@ def get_filters():
     print('-'*40)
     return city, month, day
 
-def load_data(city, month, day):
+def load_data(c, month, day):
     """
     Loads data for the specified city and filters by month and day if applicable.
    df = pd.read_csv(CITY_DATA[city])
@@ -54,7 +54,7 @@ def load_data(city, month, day):
     Returns:
         df - Pandas DataFrame containing city data filtered by month and day
     """
-    df = pd.read_csv(CITY_DATA[city])
+    df = pd.read_csv(CITY_DATA[c])
     df['Start Time'] = pd.to_datetime(df['Start Time'])
     df['month'] = df['Start Time'].dt.month
     df['day_of_week'] = df['Start Time'].dt.weekday_name
@@ -168,13 +168,13 @@ def user_stats(df):
 
 def raw_data(df):
         row = 0
-        flag = input('\nDo you need to see the first 5 rows of the data? Enter yes or no\n').lower()
+        flag = input('\nDo you need to see the first 6 rows of the data? Enter yes or no\n').lower()
         while flag == 'yes':
             #top_five_data = df.head(row+5)
             #print(top_five_data)
-            print(df[row:row+5])
-            row += 5
-            flag = input('\nDo you need to see more 5 rows data? Enter yes or no\n').lower()
+            print(df[row:row+6])
+            row += 6
+            flag = input('\nDo you need to see more 6 rows data? Enter yes or no\n').lower()
         else:
             print('\n Done!! No more rows needed to diplay')
 
